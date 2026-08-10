@@ -22,11 +22,18 @@ export default function App() {
     }))
   }
 
+  function handleDeleteTasks(taskId) {
+    setTasks(tasks.filter(t =>
+      t.id !== taskId
+    ))
+  };
+
   return (
     <>
       <TaskList
         tasks={tasks}
         onToggle={handleToggleTasks}
+        onDelete={handleDeleteTasks}
       />
     </>
   );
