@@ -1,11 +1,9 @@
-import './App.css'
 import TaskList from './TaskList'
 import TaskForm from './TaskForm';
 import { useState } from 'react';
 
 export default function App() {
   const initialTasks = []
-  const [nextId, setNextId] = useState(0);
   const [tasks, setTasks] = useState(initialTasks);
 
   function handleToggleTasks(taskId, nextCompleted) {
@@ -30,7 +28,6 @@ export default function App() {
       ...tasks,
       {id: newId, title: title}
     ])
-    setNextId(nextId + 1);
   }
 
   return (
